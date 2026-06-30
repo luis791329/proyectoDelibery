@@ -1,0 +1,227 @@
+* {
+    margin: 0;/*Quita todos los margenes que pone el navegador por defecto*/
+    padding: 0;/*Quita todos los espcios internos por defectos*/
+    box-sizing: border-box; /*Incluye padding y borde en el ancho total*/
+}
+
+body {
+    font-family: Arial, sans-serif;/*Tipo de letra arial. Si no existe, una sin serifa*/
+    line-height: 1.6;/*Espacio entre lineas: 1.6 veces el tamaño de letra*/
+    color: #131314;/*Texto gris muy oscuro, casi negro*/
+    background-color: #d6e0d4;/*Fondo de toda la pagina: verde grisaceo claro*/
+}
+
+.cabecera {
+    background-color: #d6e0d4;/*Mismo fondo que el body: verde grisaceo claro*/
+    color: #080707;/*Texto casi negro*/
+    padding: 1.5rem;/*Espacio interno de 24px por todos lados*/
+    text-align: center;/*Todo el contenido centrado*/
+}
+
+.navegacion {
+    background-color: #2e5e25;/*Color verde oscuro de fondo*/
+    top: 0;/*Se pega justo en el borde superior: 0px*/
+    z-index: 100;/*Se pone por encima de todo lo demas*/
+}
+
+.menu {
+    list-style: none;/*Quita los puntitos de la lista*/
+    display: flex; /*Usamos Flex para organizar el menú y tambien se pone los <li> en la fila horizontal*/
+    justify-content: center;/*Centrea todos los links en el medio*/
+    flex-wrap: wrap;/*Si no entran en pantalla, bajan a otra linea*/
+}
+
+.menu li a {
+    display: block;/*Hace que todo el area sea clickeada*/
+    padding: 1rem 1.5rem;/*espacio interior: 1rem arriba/abajo, 1.5rem lados*/
+    color: white;/*texto blanco*/
+    text-decoration: none;/*quita el subrayado del link*/
+    transition: background-color 0.3s ease; /*anima el cambio de color en 0.3s*/
+}
+
+.menu li a:hover {
+    background-color: #ddf74d;/*fondo amarillo*/
+}
+
+/*  2. MODELO DE CAJA (Box Model)
+   Definimos ancho, alto, padding, borde y margen*/
+.contenedor-principal {
+    max-width: 1200px;/*ancho maximo de 1200px en pantallas grandes*/
+    margin: 0 auto; /*0 arriba/abajo, auto izquierda/derecha = centrada*/
+    padding: 2rem 1.5rem;/*espacio interno para que el texto no toque los bordes*/
+}
+
+.seccion {
+    margin-bottom: 3rem; /*Espacio por fuera, abajo. separa una seccion de otra*/
+    padding: 1.5rem;/*espacio por dentro. que el texto no toque los bordes*/
+    background-color: white;/*fondo blanco*/
+    border-radius: 8px;/*esquinas redondeadas*/
+    box-shadow: 0 2px 8px #0000001a; /*sombra suave abajo para dar profundidad*/
+}
+
+/*3. FLEX Y GRID (Distribución de elementos)*/
+.contenido-flex {
+    display: flex;/*activa flexbox. pone los hijos en fila*/
+    align-items: center;/*centra verticalmente la imagen y el texto*/
+    gap: 2rem; /*2rem de espacio entre imagen y texto*/
+    flex-wrap: wrap; /*en celular, la imagen pasa abajo del texto*/
+    margin: 1.5rem 0;/*margen arriba y abajo de 1.5rem*/
+}
+
+.grid-servicios {
+    display: grid;/*Activa grid*/
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));/*columnas automaticas*/
+    gap: 1.5rem;/*espacio de 1.5rem entre tarjetas*/
+    margin-top: 1.5rem;/*separacion con el titulo de arriba*/
+}
+
+.tarjeta {
+    background-color: #ecf0f1;/*Gris muy claro de fondo*/
+    padding: 1.5rem;/*espacio interno para que el texto respire*/
+    border-radius: 8px;/*esquinas redondeadas*/
+    text-align: center;/*texto centrado*/
+    transition: transform 0.3s ease; /*Prepara la animacion*/
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px); /*Mueve la tarjeta en 8px hacia arriba*/
+}
+
+/*    4. ESTILOS DE TEXTO Y PÁRRAFO*/
+h1 {
+    font-size: 2rem;/*Tamaño grande 2rem = 32px*/
+    font-weight: bold;/*Texto en negrita*/
+}
+
+h2 {
+    font-size: 1.6rem;/*1.6rem = 26px*/
+    color: #2c3e50;/*azul oscuro grisaceo*/
+    margin-bottom: 1rem;/*espacio de 16px abajo antes del parrafo*/
+    border-bottom: 2px solid #7977f7;/*linea lila de 2px debajo del texto*/
+    padding-bottom: 0.3rem;/*espacio de texto y la linea lila*/
+}
+
+p {
+    font-size: 1rem;/*tamaño normal: 1rem = 16px*/
+    text-align: justify;/*texto alineado a ambos lados, como en libros*/
+    margin-bottom: 1rem;/*espacio de 16px entre parrafos*/
+}
+
+/*5. ESTILOS DE IMÁGENES*/
+.logo {
+    width: 80px;/*ancho fijo de 80px*/
+    height: auto;/*alto se ajusta solo para no deformar la imagen*/
+    margin-bottom: 1rem;/*espacio de 16px abajo del logo*/
+}
+
+.imagen-ajustada {
+    max-width: 100%;/*la imagen nunca sera mas ancha que su contenedor*/
+    height: auto;/*el alto se ajusta solo para no deformarse*/
+    border-radius: 8px;/*esquinas redondeadas de 8px*/
+    box-shadow: 0 2px 6px #00000026;/*sombra suave abajo: 0 der, 2px abajo, 6px difuminado*/
+}
+
+/*6. ESTILOS DE TABLAS*/
+.tabla-estilo {
+    width: 100%;/*la tabla ocupa todo el ancho disponible*/
+    border-collapse: collapse;/*junta los bordes de las celdas. sin espacios dobles*/
+    margin-top: 1rem;/*16px de espacio arriba, separada del titulo*/
+}
+
+.tabla-estilo th,
+.tabla-estilo td {
+    padding: 0.8rem;/*espacio interno de 13px aproximada*/
+    text-align: left;/*texto alineado a la izquierda*/
+    border-bottom: 1px solid #ddd;/*linea gris clara de 1px abajo de cada fila*/
+}
+
+.tabla-estilo th {
+    background-color: #317621;/*fondo verde oscuro*/
+    color: white;/*texto blanco*/
+}
+
+.tabla-estilo tr:hover {
+    background-color: #f1f1f1;/*fondo gris muy claro*/
+}
+
+
+/* 7. ESTILOS DE BOTONES*/
+.boton {
+    background-color: #2a6a2e;/*fondo verde oscuro*/
+    color: white;/*texto blanco*/
+    border: none;/*quita el borde gris que traen los botones por defecto*/
+    padding: 0.8rem 1.5rem;/*espacio interno:  13px arriba/abajo, 24px a los lados*/
+    font-size: 1rem;/*tamaño de texto normal: 16px*/
+    border-radius: 4px;/*esquinas ligeramente redondeadas*/
+    cursor: pointer;/*el mause se vuelve una manito al pasar arriba*/
+    transition: all 0.3s ease;/*anima cualquier cambio en 0.3s, suave*/
+}
+
+.boton:hover {
+    background-color: #387524;/*cambia a un verde un poco mas claro*/
+    transform: scale(1.05); /*se agranda 5%. comentario: "aumento de tamaño 2D"*/
+}
+
+.boton-secundario {
+    background-color: #27621b;/*Verde aun mas oscuro que el boton normal*/
+}
+
+.boton-secundario:hover {
+    background-color: #176e20;/*Verde diferente*/
+}
+
+/*  8. TRANSICIONES Y TRANSFORMACIONES 2D
+   - Ya aplicadas en menú, tarjetas y botones
+   - transition: controla el cambio suave de propiedades
+   - transform: realiza cambios de forma, posición o tamaño
+*/
+
+/*  9. MEDIA QUERIES (Responsive Design)
+      Adaptado a 3 tamaños de pantalla:
+      - Móvil: < 768px
+      - Tableta: 768px - 1024px
+      - Escritorio: > 1024px*/
+
+/*Móvil */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 1.5rem;/*titulo mas pequeño: 24px para que entre en pantalla*/
+    }
+    .contenido-flex {
+        flex-direction: column;/*la imagen y el texto se apilan uno arriba del otro*/
+        text-align: center;/*Texto centrado en vez de la izquierda*/
+    }
+    .menu {
+        flex-direction: column;/*la imagen y el texto se apilan uno arriba del otro*/
+        text-align: center;/*Links centrada*/
+    }
+}
+
+/* Tableta */
+@media (min-width: 768px) and (max-width: 1023px) {
+    h1 {
+        font-size: 1.8rem;/*Titulo mediano: 29px aproximada*/
+    }
+    .grid-servicios {
+        grid-template-columns: repeat(2, 1fr);/*Las tarjeta "rapido, seguro" en 2 columnas*/
+    }
+}
+
+/* Escritorio */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 2.2rem;/*Titulo grande: 35px para monitores*/
+    }
+    .grid-servicios {
+        grid-template-columns: repeat(3, 1fr);/*Las 3 tarjetas en una sola fila*/
+    }
+}
+
+/* Pie de página*/
+.pie-pagina {
+    background-color: #eaeff5;/*Fondo gris azulado muy clarito*/
+    color: white;/*Texto en color blanco*/
+    text-align: center;/*Todo el texto centrado*/
+    padding: 1.5rem;/*Espacio interno de 24px por todos lados*/
+    margin-top: 2rem;/*Espacio por fuera, arriba: 32px de separacion*/
+}
